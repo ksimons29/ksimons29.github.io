@@ -43,6 +43,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* === PROFILE IMAGE - Professional circle === */
+.profile-image,
+#header img,
+.header-container img,
+img.profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover,
+#header img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* Header layout with image */
+#header .row,
+.header-container .row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#header .col-left,
+.header-container .profile-col {
+  flex-shrink: 0;
+}
+
+#header .col-right,
+.header-container .info-col {
+  flex: 1;
+}
+
 /* === HEADER SECTION - Executive presence === */
 #header {
   background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-light) 100%);
@@ -353,6 +394,23 @@ footer a:hover {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
+  .profile-image,
+  #header img,
+  .header-container img,
+  img.profile {
+    width: 100px;
+    height: 100px;
+    float: none;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+  }
+
+  #header .row,
+  .header-container .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
   #header h1,
   .header-container h1 {
     font-size: 2.5rem;
@@ -365,6 +423,11 @@ footer a:hover {
 
   .header-container {
     padding: 3rem 1.5rem;
+  }
+
+  .social-links,
+  #header .icons {
+    justify-content: center;
   }
 
   .container-wrapper,

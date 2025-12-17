@@ -1,71 +1,259 @@
+/* Koos Simons Portfolio - Modern European Minimalist */
+
 :root {
-  --primary-color: #2C5F7C;
-  --accent-color: #E67E22;
-  --text-color: #2C3E50;
-  --bg-color: #FAFBFC;
-  --card-bg: #FFFFFF;
-  --border-color: #E1E4E8;
+  /* Warm, sophisticated palette */
+  --primary: #1a5f7a;        /* Deep ocean teal - trust + depth */
+  --accent: #d4874b;         /* Warm terracotta - creativity */
+  --text-primary: #1f2937;   /* Soft black - readable */
+  --text-secondary: #6b7280; /* Muted gray - hierarchy */
+  --bg-main: #fafbfc;        /* Barely-there gray */
+  --bg-card: #ffffff;        /* Pure white cards */
+  --border: #e5e7eb;         /* Subtle divisions */
+  --hover: #f3f4f6;          /* Gentle interaction */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono&display=swap');
+/* Typography - Modern European */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  line-height: 1.7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-main);
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Headers - Serif for personality */
+h1, h2, h3 {
+  font-family: 'Merriweather', Georgia, serif;
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; margin-top: 3rem; }
+h3 { font-size: 1.25rem; }
+h4, h5, h6 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-primary);
 }
 
-.header-container {
-  border-bottom: 3px solid var(--primary-color);
+/* Layout - Breathing room */
+.container, .wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.container {
-  max-width: 750px;
-  padding: 0 24px;
+/* Header - Clean introduction */
+.header-container, header {
+  padding: 3rem 0 2rem;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 3rem;
 }
 
-.section {
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
+.header-container h1, header h1 {
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
 }
 
-.project-card, .layout {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-color);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
+.header-container p, header p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
 }
 
-.project-card:hover, .layout:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
-
+/* Links - Subtle sophistication */
 a {
-  color: var(--primary-color);
+  color: var(--primary);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-color);
-  border-bottom-color: var(--accent-color);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
+/* Navigation / Contact Links */
+.social-links a, .contact-links a {
+  display: inline-block;
+  margin-right: 1.5rem;
+  padding: 0.25rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Project Cards - Elevated but not flashy */
+.layout, .project-card, article {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout:hover, .project-card:hover, article:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-left-width: 6px;
+}
+
+/* Project Title */
+.layout h3, .project-card h3 {
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Metadata - Role, dates */
+.layout .caption, .project-meta, .sub_title {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Outcome Metrics - Make them pop */
+.layout ul li, .outcome-metric {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.layout ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Strong text (Challenge, Approach, Outcome) */
+strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Sections - Clear hierarchy */
+section {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* Skills / Tags */
+.skill-tag, .tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  background: var(--hover);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.skill-tag:hover, .tag:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Buttons / CTAs */
+.btn, button, input[type="submit"] {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover, button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212,135,75,0.3);
+}
+
+/* Footer - Understated */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Mobile - Always perfect */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
+  body { font-size: 15px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .container, .wrapper { padding: 0 1.25rem; }
+
+  .header-container, header { padding: 2rem 0 1.5rem; }
+
+  .layout, .project-card, article {
+    padding: 1.5rem;
+    border-radius: 8px;
   }
+
+  .social-links a, .contact-links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Accessibility */
+a:focus, button:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Print - Clean resume */
+@media print {
+  body { background: white; }
+  .layout, .project-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+  a { border-bottom: 1px solid currentColor; }
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: white;
 }

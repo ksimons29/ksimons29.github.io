@@ -11,6 +11,13 @@ title: Product Manager | Lisbon
 website: ksimons29.github.io
 
 linkedin_username: koossimons
+twitter_username: koossimons
+instagram_username: koossimons
+
+additional_links:
+- title: WhatsApp
+  icon: fab fa-whatsapp
+  url: https://wa.me/
 
 darkmode: false
 

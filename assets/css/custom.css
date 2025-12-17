@@ -1,0 +1,71 @@
+:root {
+  --primary-color: #2C5F7C;
+  --accent-color: #E67E22;
+  --text-color: #2C3E50;
+  --bg-color: #FAFBFC;
+  --card-bg: #FFFFFF;
+  --border-color: #E1E4E8;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono&display=swap');
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.header-container {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.container {
+  max-width: 750px;
+  padding: 0 24px;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-card, .layout {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover, .layout:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}

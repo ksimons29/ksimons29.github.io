@@ -76,7 +76,8 @@ body {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 #header {
-  min-height: 100vh;
+  min-height: auto;
+  padding: var(--space-xl) var(--space-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,8 +425,40 @@ main,
 }
 
 .intro-container h3,
-#about h3 {
-  display: none; /* Hide the "About Me" heading for cleaner design */
+.about-section h3.section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px dashed var(--cream);
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.about-profile {
+  flex-shrink: 0;
+}
+
+.about-profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 280px;
 }
 
 .intro-container .row,

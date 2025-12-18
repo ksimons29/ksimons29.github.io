@@ -16,6 +16,7 @@
     initScrollAnimations();
     initSmoothScrolling();
     initHeaderParallax();
+    initDraggableWidget();
   });
 
   /**
@@ -106,6 +107,130 @@
         });
 
         ticking = true;
+      }
+    });
+  }
+
+  /**
+   * Draggable LLYLI Widget
+   * Users can drag the widget anywhere on screen
+   * Position is saved to localStorage
+   */
+  function initDraggableWidget() {
+    const widget = document.querySelector('.llyli-widget');
+    if (!widget) return;
+
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+    let hasMoved = false;
+
+    // Load saved position from localStorage
+    const savedPosition = localStorage.getItem('llyli-widget-position');
+    if (savedPosition) {
+      try {
+        const pos = JSON.parse(savedPosition);
+        widget.style.right = 'auto';
+        widget.style.bottom = 'auto';
+        widget.style.left = pos.x + 'px';
+        widget.style.top = pos.y + 'px';
+      } catch (e) {
+        // Invalid saved position, use default
+      }
+    }
+
+    // Mouse events
+    widget.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+
+    // Touch events
+    widget.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', endDrag);
+
+    function startDrag(e) {
+      isDragging = true;
+      hasMoved = false;
+      widget.classList.add('is-dragging');
+
+      const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+
+      const rect = widget.getBoundingClientRect();
+      startX = clientX;
+      startY = clientY;
+      initialX = rect.left;
+      initialY = rect.top;
+
+      // Convert from right/bottom positioning to left/top
+      widget.style.right = 'auto';
+      widget.style.bottom = 'auto';
+      widget.style.left = initialX + 'px';
+      widget.style.top = initialY + 'px';
+
+      if (e.type === 'touchstart') {
+        e.preventDefault();
+      }
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+
+      const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+      const deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+
+      // Check if moved enough to be considered a drag
+      if (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5) {
+        hasMoved = true;
+      }
+
+      let newX = initialX + deltaX;
+      let newY = initialY + deltaY;
+
+      // Keep widget within viewport bounds
+      const widgetRect = widget.getBoundingClientRect();
+      const maxX = window.innerWidth - widgetRect.width;
+      const maxY = window.innerHeight - widgetRect.height;
+
+      newX = Math.max(0, Math.min(newX, maxX));
+      newY = Math.max(0, Math.min(newY, maxY));
+
+      widget.style.left = newX + 'px';
+      widget.style.top = newY + 'px';
+
+      if (e.type === 'touchmove') {
+        e.preventDefault();
+      }
+    }
+
+    function endDrag(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      widget.classList.remove('is-dragging');
+
+      // Save position to localStorage
+      const rect = widget.getBoundingClientRect();
+      localStorage.setItem('llyli-widget-position', JSON.stringify({
+        x: rect.left,
+        y: rect.top
+      }));
+
+      // If it was just a click (no drag), allow the link to work
+      // If it was a drag, prevent the click
+      if (hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+
+    // Prevent click from firing after drag
+    widget.addEventListener('click', function(e) {
+      if (hasMoved) {
+        e.preventDefault();
+        hasMoved = false;
       }
     });
   }

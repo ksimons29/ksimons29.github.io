@@ -1355,6 +1355,29 @@ button:focus {
   visibility: visible;
 }
 
+/* Dragging state */
+.llyli-widget.is-dragging {
+  cursor: grabbing;
+  transform: scale(1.1);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.25),
+    0 20px 70px rgba(39,123,120,0.3);
+  z-index: 1001;
+}
+
+.llyli-widget.is-dragging .llyli-tooltip {
+  display: none;
+}
+
+.llyli-widget.is-dragging::before {
+  animation: none;
+}
+
+/* Grab cursor on hover */
+.llyli-widget {
+  cursor: grab;
+}
+
 /* Pulse animation for attention */
 .llyli-widget::before {
   content: '';

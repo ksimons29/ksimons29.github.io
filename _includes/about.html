@@ -1,9 +1,4 @@
 <section class="intro-container" id="about" aria-label="About">
-  {%- if site.about_profile_image -%}
-  <div class="profile-image">
-    <img src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name }}" />
-  </div>
-  {%- endif -%}
   <div class="about-content">
     {{ site.about_content | strip | markdownify }}
   </div>

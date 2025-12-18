@@ -1,7 +1,14 @@
 <header id="header">
   <div class="header-container">
-    <h1>{{ site.name | escape }}</h1>
-    <h2 class="sub-title">{{ site.title | escape }}</h2>
+    {%- if site.about_profile_image -%}
+    <div class="header-profile">
+      <img src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name }}" class="profile-img" />
+    </div>
+    {%- endif -%}
+    <div class="header-text">
+      <h1>{{ site.name | escape }}</h1>
+      <h2 class="sub-title">{{ site.title | escape }}</h2>
+    </div>
 
     <ul class="icons no-print">
       {%- if site.linkedin_username -%}
@@ -74,6 +81,20 @@
           </a>
         </li>
       {%- endif -%}
+      {%- if site.whatsapp_number -%}
+        <li>
+          <a target="_blank" href="https://wa.me/{{ site.whatsapp_number | remove: '+' | remove: ' ' }}" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </li>
+      {%- endif -%}
+      {%- if site.email -%}
+        <li>
+          <a href="mailto:{{ site.email }}" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+      {%- endif -%}
       {% for link in site.additional_links %}
         <li>
           {% include a.html href=link.url class="" %}
@@ -82,11 +103,5 @@
         </li>
       {% endfor %}
     </ul>
-
-    {%- if site.email -%}
-      <p>
-        <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
-      </p>
-    {%- endif -%}
   </div>
 </header>

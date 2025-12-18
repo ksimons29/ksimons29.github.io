@@ -16,8 +16,15 @@
 
       {%- include about.html -%}
 
-      {%- if site.data.projects.size > 0 -%}
-        {%- include projects.html -%}
+      {%- if site.version == 2 -%}
+        {% for section in site.content %}
+          <div class="container {{ section.layout }}-container section-{{ section.title | slugify }}">
+            <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
+            {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
+          </div>
+        {% endfor %}
+      {% else %}
+        {%- include v1/default.html -%}
       {%- endif -%}
 
       {%- if site.data.experience.size > 0 -%}
@@ -36,6 +43,13 @@
   </main>
 
   {%- include footer.html -%}
+
+  <!-- LLYLI Survey Floating Widget -->
+  <a href="https://tally.so/r/jaaBzJ" target="_blank" rel="noopener" class="llyli-widget" aria-label="Take the LLYLI Survey">
+    <img src="{{ '/images/llyli-widget.png' | relative_url }}" alt="LLYLI - Learn the Language You Live In" />
+    <span class="llyli-tooltip">Take the Survey</span>
+  </a>
+
   <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
 </body>
 

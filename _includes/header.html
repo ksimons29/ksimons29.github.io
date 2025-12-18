@@ -1,5 +1,11 @@
 <header id="header">
   <div class="header-container">
+    {%- if site.about_profile_image -%}
+    <div class="header-profile">
+      <img src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name }}" />
+    </div>
+    {%- endif -%}
+
     <div class="header-text">
       <h1>{{ site.name | escape }}</h1>
       <h2 class="sub-title">{{ site.title | escape }}</h2>

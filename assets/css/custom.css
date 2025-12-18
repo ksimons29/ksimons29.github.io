@@ -149,27 +149,29 @@ body {
   padding: var(--space-md) var(--space-lg);
   text-align: center;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: wrap;
+  gap: var(--space-sm);
 }
 
-/* Header profile - positioned right */
+/* Header profile - absolutely positioned top-right */
 .header-profile {
-  flex-shrink: 0;
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-md);
+  z-index: 10;
 }
 
 .header-profile img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--gold);
   box-shadow:
-    0 0 0 6px rgba(201,162,39,0.15),
-    0 15px 40px rgba(0,0,0,0.4);
+    0 0 0 5px rgba(201,162,39,0.15),
+    0 10px 30px rgba(0,0,0,0.4);
   transition: all 0.5s var(--ease-out);
   animation: fadeInScale 1s var(--ease-out) 0.2s both;
 }
@@ -368,7 +370,7 @@ h2.sub-title,
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MAIN CONTENT AREA
+   MAIN CONTENT AREA — Reduced top padding for tighter layout
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .container-wrapper,
@@ -377,7 +379,7 @@ main,
 .page-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-md) var(--space-lg) var(--space-2xl);
 }
 
 .wrapper {
@@ -386,7 +388,7 @@ main,
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ABOUT SECTION — Editorial intro block
+   ABOUT SECTION — Editorial intro block (compact)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .intro-container,
@@ -394,8 +396,8 @@ main,
 .about-section {
   background: var(--paper-warm);
   border-radius: 0;
-  padding: var(--space-2xl) var(--space-xl);
-  margin: calc(var(--space-xl) * -1) calc(var(--space-lg) * -1) var(--space-2xl);
+  padding: var(--space-lg) var(--space-xl);
+  margin: 0 calc(var(--space-lg) * -1) var(--space-lg);
   position: relative;
   border-bottom: 1px solid var(--cream);
 }
@@ -403,25 +405,25 @@ main,
 .intro-container::before {
   content: '"';
   position: absolute;
-  top: var(--space-lg);
-  left: var(--space-xl);
+  top: var(--space-sm);
+  left: var(--space-lg);
   font-family: var(--font-display);
-  font-size: 8rem;
+  font-size: 6rem;
   line-height: 1;
   color: var(--gold);
-  opacity: 0.15;
+  opacity: 0.12;
   pointer-events: none;
 }
 
 .intro-container h3,
 .about-section h3.section-title {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--ink);
   text-align: center;
-  margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
   border-bottom: 1px dashed var(--cream);
 }
 
@@ -934,76 +936,107 @@ footer a:hover {
   #header {
     min-height: auto;
     max-height: none;
-    padding: var(--space-lg) var(--space-md) var(--space-md);
+    padding: var(--space-md) var(--space-md) var(--space-sm);
   }
 
   .header-container {
     padding: var(--space-sm);
     flex-direction: column;
     text-align: center;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  /* Profile stays top-right on mobile */
+  .header-profile {
+    position: absolute;
+    top: var(--space-xs);
+    right: var(--space-sm);
   }
 
   .header-profile img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
   }
 
   .header-text {
     min-width: auto;
-  }
-
-  .profile-image,
-  #header img,
-  img.profile {
-    width: 100px;
-    height: 100px;
+    padding-right: 80px; /* Make room for profile */
   }
 
   #header h1 {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
   }
 
+  #header h1::after {
+    width: 40px;
+    margin: var(--space-xs) auto 0;
+  }
+
+  #header .sub-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Social buttons - smaller and tighter */
   .social-links a,
   #header .icons a {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
   }
 
+  #header .icons {
+    gap: var(--space-xs);
+  }
+
+  /* About section - compact */
   .intro-container,
   #about {
-    padding: var(--space-lg) var(--space-md);
-    margin: 0 calc(var(--space-md) * -1) var(--space-lg);
+    padding: var(--space-md) var(--space-md);
+    margin: 0 calc(var(--space-md) * -1) var(--space-md);
   }
 
   .intro-container::before {
-    font-size: 4rem;
-    left: var(--space-md);
+    font-size: 3.5rem;
+    left: var(--space-sm);
+    top: var(--space-xs);
+  }
+
+  .intro-container h3,
+  .about-section h3.section-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
   }
 
   .intro-container p,
   #about p {
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
   }
 
-  .intro-container .profile-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto var(--space-sm);
+  .about-profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-wrapper {
+    gap: var(--space-md);
   }
 
   .container-wrapper,
   .container,
   main,
   .page-content {
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
   }
 
   h2, .section-title,
   .list-container > h3,
   .text-container > h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    margin: var(--space-lg) 0 var(--space-md);
   }
 
   .layout,
@@ -1013,7 +1046,7 @@ footer a:hover {
   }
 
   .layout h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   /* Card header mobile layout */
@@ -1027,38 +1060,63 @@ footer a:hover {
   }
 
   .card-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .card-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
   }
 }
 
 @media (max-width: 480px) {
-  #header h1 {
-    font-size: 2.25rem;
+  .header-profile img {
+    width: 60px;
+    height: 60px;
   }
 
-  #header h2 {
+  .header-text {
+    padding-right: 70px;
+  }
+
+  #header h1 {
+    font-size: 1.5rem;
+  }
+
+  #header h1::after {
+    width: 30px;
+  }
+
+  #header .sub-title {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+
+  #header .icons a {
+    width: 32px;
+    height: 32px;
     font-size: 0.75rem;
-    letter-spacing: 0.15em;
   }
 
   .intro-container p,
   #about p {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-style: normal;
   }
 
-  .layout h3 {
-    font-size: 1.25rem;
+  .about-profile img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .layout h3,
+  .card-title {
+    font-size: 1.125rem;
   }
 
   h2, .section-title,
   .list-container > h3,
   .text-container > h3 {
-    font-size: 1.75rem;
+    font-size: 1.375rem;
   }
 }
 

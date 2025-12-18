@@ -1,110 +1,249 @@
-title: Koos Simons
+# Site Settings
+title: Koos Simons - Product Manager | Lisbon
 email: koossimons91@gmail.com
 description: >-
-  Product Manager with 6 years in product roles. Based in Lisbon, 
-  open to roles across Portugal and remote opportunities in Europe.
+  Product Manager based in Lisbon with 6 years PM experience building products
+  that turn complex problems into solutions people actually adopt. Currently
+  upskilling through VibeCoding Lisboa and Carnegie Mellon's Advanced PM Program.
 
+# Theme
 remote_theme: sproogen/modern-resume-theme
+version: 2
 
+# Personal Info
 name: Koos Simons
 title: Product Manager | Lisbon
 email: koossimons91@gmail.com
 website: ksimons29.github.io
 
+# Social Links
 linkedin_username: koossimons
+github_username: ksimons29
+whatsapp_number: +351123456789  # REPLACE with your actual number
 
+# Display Settings
 darkmode: false
-version: 2
+about_profile_image: images/profile.jpg
 
+# About Me
 about_content: |
-  Product Manager with ~6 years in product roles and 10 years total experience 
-  who turns complex problems into products people actually use.
-  
-  I lead discovery, align stakeholders, and ship outcomes that matter. 
-  Currently based in **Lisbon**, open to product roles across Portugal and 
-  remote opportunities in Europe.
+  Product Manager with ~6 years in product roles and 10 years total experience
+  who builds products people actually use—from AI assistants to analytics platforms
+  to governance systems.
 
+  After wrapping up my previous role in the Netherlands, I relocated to **Lisbon**,
+  walked part of the Camino de Santiago, and dove into hands-on product work. Currently
+  upskilling through **VibeCoding Lisboa** (building a language learning app) and
+  **Carnegie Mellon's Advanced Product Management Program**.
+
+  I lead structured discovery, run rapid experiments, and ship outcomes that matter.
+  I thrive at the intersection of user needs, technical possibility, and business value—
+  especially for data-driven products and AI systems.
+
+# Content Sections
 content:
-  - title: Selected Work
+  # Current Projects
+  - title: Current Work
     layout: list
     content:
       - layout: top-middle
-        title: AI-Powered Knowledge Assistant
-        sub_title: Product Manager | Financial Services
-        caption: 2024 | 6 months
+        title: Learn the Language You Live In (LLYLI)
+        sub_title: Personal Project | VibeCoding Lisboa
+        caption: 2025 - Present
+        link: github.com/ksimons29
+        quote: >
+          Building an AI-powered language learning app that captures words from your daily life
         description: |
-          **Challenge:** Teams spending 15-20 minutes per query searching disconnected systems.
-          
-          **Approach:**
-          - Led discovery with 40+ user interviews
-          - Designed RAG-based solution
-          - Created evaluation framework for quality
-          - Ran phased rollout with tracking
-          
-          **Outcome:**
-          - Reduced search time by ~30%
-          - 65% adoption in 3 months
-          - 4.2/5 satisfaction score
+          Creating a mobile app that captures words and phrases from your environment (menus,
+          signs, conversations) and turns them into personalized spaced-repetition flashcards.
+
+          **What I'm learning:**
+          - End-to-end product development (discovery → design → build → test)
+          - GenAI integration (OCR, translation APIs, prompt engineering)
+          - Mobile-first UX for language learners
+          - Go-to-market strategy for consumer apps
+
+          Part of hands-on upskilling through VibeCoding Lisboa's product community.
+
+  # Selected Outcomes
+  - title: Selected Outcomes
+    layout: list
+    content:
+      - layout: top-middle
+        title: GenAI Knowledge Assistant
+        sub_title: B2B Product | Financial Services
+        caption: 2024
+        description: |
+          **Challenge:** Teams wasting 2+ hours daily searching fragmented documentation
+          across multiple systems.
+
+          **What I Did:**
+          - Led discovery with 40+ user interviews across 6 departments
+          - Designed RAG-based solution using Azure OpenAI
+          - Built evaluation framework for answer quality and relevance
+          - Ran phased rollout with usage tracking and feedback loops
+
+          **Impact:**
+          - 30% reduction in search time
+          - 200+ active users within 3 months
+          - 4.2/5 user satisfaction score
 
       - layout: top-middle
         title: Self-Service Analytics Platform
-        sub_title: Product Manager | Retail
-        caption: 2023 | 8 months
+        sub_title: Data Product | Retail
+        caption: 2023
         description: |
-          **Challenge:** 200+ custom reports per quarter overwhelming BI team.
-          
-          **Approach:**
-          - Evaluated 5 tools against criteria
-          - Built TCO business case
-          - Led cross-functional selection
-          - Designed training strategy
-          
-          **Outcome:**
-          - 40% reduction in report time
-          - 120+ self-service users
-          - Backlog cleared in 90 days
+          **Challenge:** BI team drowning in 200+ custom report requests per quarter,
+          blocking decision-making speed.
+
+          **What I Did:**
+          - Ran comparative evaluation of 5 platforms (technical + UX criteria)
+          - Built TCO business case that got leadership buy-in
+          - Led cross-functional implementation and rollout
+          - Designed training strategy and adoption metrics
+
+          **Impact:**
+          - 40% faster report creation time
+          - 120+ business users self-serving within 6 months
+          - Request backlog cleared in 90 days
 
       - layout: top-middle
         title: Data Governance Operating Model
-        sub_title: Product Lead | Banking
-        caption: 2022-2023 | 12 months
+        sub_title: Platform Product | Banking
+        caption: 2022-2023
         description: |
-          **Challenge:** Fragmented governance causing compliance gaps.
-          
-          **Approach:**
-          - Designed federated model
-          - Built visible quality scorecard
-          - Created lightweight process
-          - Launched stewardship community
-          
-          **Outcome:**
+          **Challenge:** Fragmented data governance causing compliance gaps, slow approvals,
+          and frustrated data teams.
+
+          **What I Did:**
+          - Designed federated governance model with clear ownership
+          - Built visible quality scorecard (gamified improvement)
+          - Launched data stewardship community across 8 business units
+          - Created lightweight process that balanced control with speed
+
+          **Impact:**
           - 85% policy adoption in 6 months
-          - Quality scores 60% → 85%
-          - Process time 4 weeks → 1 week
+          - Quality scores improved from 60% → 85%
+          - Approval process reduced from 4 weeks → 1 week
 
-  - title: Current Learning
-    layout: text
-    content: |
-      **Carnegie Mellon Advanced Product Management Program** (2025)  
-      Structured PM curriculum covering discovery, roadmapping, and metrics.
-      
-      **Vibe Code Lisbon**  
-      Active in Lisbon's product and tech community.
+  # Experience
+  - title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: Rabobank
+        sub_title: Product Manager - Data & AI
+        caption: 2022 - 2024
+        link: rabobank.nl
+        description: |
+          Led product development for GenAI assistant and data platform capabilities.
+          Shipped RAG-based knowledge tools, designed governance operating models,
+          and coordinated cross-functional delivery across business and engineering teams.
 
+      - layout: left
+        title: Nike
+        sub_title: Product Manager - Analytics
+        caption: 2021 - 2022
+        link: nike.com
+        description: |
+          Drove self-service analytics adoption and predictive modeling for European
+          store operations. Evaluated platforms, built business cases, and led rollout
+          across retail teams—balancing speed of insight with data quality.
+
+      - layout: left
+        title: KPN
+        sub_title: Business Analyst / Product Owner
+        caption: 2019 - 2021
+        link: kpn.com
+        description: |
+          Managed customer data platforms and analytics tools for telecom operations.
+          Prioritized backlogs, ran discovery, and coordinated delivery across
+          business, data, and engineering teams.
+
+      - layout: left
+        title: Gemeente Amsterdam
+        sub_title: Business Analyst
+        caption: 2017 - 2019
+        link: amsterdam.nl
+        description: |
+          Supported digital transformation projects for municipal services.
+          Gathered requirements, mapped processes, and facilitated stakeholder
+          alignment for citizen-facing platforms.
+
+  # Skills
   - title: Skills
     layout: text
     content: |
-      **Product Management:** Discovery • Roadmapping • Prioritization • Metrics • 
-      Stakeholder Alignment • Cross-functional Leadership • User Research
-      
-      **Technical:** SQL • Power BI • Tableau • Jira • Azure DevOps • Confluence
-      
-      **Domains:** Data Products • AI Products • B2B SaaS
+      **Product Management**
+      Discovery & Problem Framing • Outcome-Based Roadmapping • Prioritization Frameworks •
+      Experimentation & MVPs • Product Metrics & Analytics • Stakeholder Alignment •
+      Cross-Functional Leadership • Go-to-Market Strategy • Adoption & Change Management
 
-  - title: Interests
+      **Data & AI**
+      Analytics Platforms • Metrics Design • Data Quality & Lineage •
+      GenAI & RAG Systems • Prompt Engineering • Azure OpenAI • LLM Evaluation •
+      Data Governance (Regulated Environments)
+
+      **Tools & Technical**
+      SQL • Python (basics) • Power BI • Tableau • Jira • Azure DevOps • Confluence •
+      Miro • Figma (wireframes) • Collibra • Snowflake • Databricks • VS Code
+
+  # Education & Learning
+  - title: Education & Upskilling
+    layout: list
+    content:
+      - layout: left
+        title: Carnegie Mellon University
+        sub_title: Advanced Product Management Program
+        caption: 2025
+        description: |
+          Intensive program covering discovery frameworks, roadmapping, experimentation,
+          metrics, and product leadership for senior PM roles.
+
+      - layout: left
+        title: VibeCoding Lisboa
+        sub_title: Product Community & Hands-On Building
+        caption: 2025
+        description: |
+          Active in Lisbon's product and tech community. Currently building "Learn the
+          Language You Live In" (LLYLI)—an AI-powered language learning app—as part of
+          hands-on upskilling in end-to-end product development.
+
+      - layout: left
+        title: Fontys University
+        sub_title: Bachelor of Commerce
+        caption: 2013 - 2017
+        description: |
+          Focus on business analysis, project management, and organizational change.
+          Graduated with honors in Strategic Management.
+
+  # Personal
+  - title: Beyond Work
     layout: text
     content: |
-      Board member and saxophonist in a big band • Family toy shop digital marketing • 
-      Camino de Santiago • Music and conversations
+      Board member and saxophonist in a Lisbon-based big band—handling everything from
+      concert logistics to community building. I help my family's toy shop back in the
+      Netherlands with digital marketing and inventory systems.
 
+      Recently walked part of the Camino de Santiago (Portuguese route) before settling
+      in Lisbon. Always up for live music, trail hiking, and conversations about how
+      products actually get built (and adopted).
+
+# Footer
 footer_show_references: false
+
+# Build settings
+sass:
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
+
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"

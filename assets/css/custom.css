@@ -83,7 +83,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: var(--ink);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   overflow: hidden;
 }
 
@@ -93,9 +93,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(201,162,39,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(107,45,60,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 80% at 60% 80%, rgba(201,162,39,0.1) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(201,162,39,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(212,163,115,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 80% at 60% 80%, rgba(201,162,39,0.08) 0%, transparent 50%);
   animation: gradientShift 15s ease-in-out infinite alternate;
 }
 
@@ -241,12 +241,12 @@ img.profile,
 .header-container h1,
 h1.name {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
   line-height: 1.1;
   color: #fff;
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0.3rem;
   animation: slideUp 0.8s var(--ease-out) 0.4s both;
 }
 
@@ -283,11 +283,12 @@ h1.name {
 h2.sub-title,
 #header h2 {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #d4a373;
+  margin-top: 0.5rem;
   margin-bottom: var(--space-md);
   animation: slideUp 0.8s var(--ease-out) 0.6s both;
 }

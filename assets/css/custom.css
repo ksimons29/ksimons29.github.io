@@ -453,6 +453,227 @@ main,
   min-width: 280px;
 }
 
+/* ── Highlight Cards ──────────────────────────────────────────────────────── */
+.highlight-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--cream);
+}
+
+.highlight-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: var(--space-md);
+  text-align: center;
+  border: 1px solid var(--cream);
+  transition: all 0.4s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--wine));
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: transparent;
+}
+
+.highlight-card:hover::before {
+  transform: scaleX(1);
+}
+
+.highlight-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-glow);
+  border-radius: 12px;
+  color: var(--gold);
+  font-size: 1.25rem;
+  transition: all 0.3s var(--ease-out);
+}
+
+.highlight-card:hover .highlight-icon {
+  background: var(--gold);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.highlight-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--space-xs);
+}
+
+.highlight-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mobile: stack cards */
+@media (max-width: 768px) {
+  .highlight-cards {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .highlight-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .highlight-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 var(--space-sm) 0 0;
+    flex-shrink: 0;
+  }
+
+  .highlight-card > div:last-child {
+    flex: 1;
+  }
+
+  .highlight-title {
+    font-size: 0.9375rem;
+    margin-bottom: 2px;
+  }
+
+  .highlight-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Languages Section ────────────────────────────────────────────────────── */
+.languages-section {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--cream);
+}
+
+.languages-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.language-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: var(--space-sm);
+  border: 1px solid var(--cream);
+  transition: all 0.3s var(--ease-out);
+}
+
+.language-item:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-soft);
+}
+
+.language-flag {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-xs);
+}
+
+.language-name {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.language-level {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.language-bar {
+  height: 4px;
+  background: var(--cream);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.language-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--wine));
+  border-radius: 2px;
+  transition: width 0.6s var(--ease-out);
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 768px) {
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .language-flag {
+    font-size: 1.25rem;
+  }
+
+  .language-name {
+    font-size: 0.8125rem;
+  }
+
+  .language-level {
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .languages-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+  }
+
+  .language-item {
+    padding: var(--space-xs);
+  }
+}
+
 .intro-container .row,
 .about-section .row {
   display: flex;
@@ -937,108 +1158,111 @@ footer a:hover {
   #header {
     min-height: auto;
     max-height: none;
-    padding: var(--space-md) var(--space-md) var(--space-sm);
+    padding: var(--space-lg) var(--space-md) var(--space-md);
   }
 
   .header-container {
-    padding: var(--space-sm);
+    padding: var(--space-md) var(--space-sm);
     flex-direction: column;
     text-align: center;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
   }
 
-  /* Profile stays top-right on mobile */
+  /* Profile stays top-right on mobile - smaller and positioned better */
   .header-profile {
     position: absolute;
-    top: var(--space-xs);
+    top: var(--space-sm);
     right: var(--space-sm);
   }
 
   .header-profile img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-width: 2px;
   }
 
   .header-text {
     min-width: auto;
-    padding-right: 80px; /* Make room for profile */
+    padding-right: 70px; /* Make room for profile */
+    padding-top: var(--space-xs);
   }
 
   #header h1 {
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.2;
   }
 
   #header h1::after {
-    width: 40px;
+    width: 35px;
     margin: var(--space-xs) auto 0;
   }
 
   #header .sub-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    margin-bottom: var(--space-sm);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-md);
   }
 
-  /* Social buttons - smaller and tighter */
+  /* Social buttons - comfortable touch targets */
   .social-links a,
   #header .icons a {
-    width: 36px;
-    height: 36px;
-    font-size: 0.85rem;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
   }
 
   #header .icons {
-    gap: var(--space-xs);
+    gap: var(--space-sm);
   }
 
-  /* About section - compact */
+  /* About section - comfortable spacing */
   .intro-container,
   #about {
-    padding: var(--space-sm) var(--space-md);
-    margin: 0 calc(var(--space-md) * -1) var(--space-sm);
+    padding: var(--space-md) var(--space-md);
+    margin: 0 calc(var(--space-md) * -1) var(--space-md);
   }
 
   .intro-container::before {
     font-size: 3rem;
     left: var(--space-sm);
-    top: 0;
+    top: var(--space-xs);
   }
 
   .intro-container h3,
   .about-section h3.section-title {
     font-size: 1.125rem;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
   }
 
   .intro-container p,
   #about p {
-    font-size: 0.875rem;
-    line-height: 1.7;
+    font-size: 0.9375rem;
+    line-height: 1.75;
   }
 
   .about-wrapper {
-    gap: var(--space-sm);
+    gap: var(--space-md);
   }
 
   .container-wrapper,
   .container,
   main,
   .page-content {
-    padding: 0 var(--space-md) var(--space-lg);
+    padding: 0 var(--space-md) var(--space-xl);
   }
 
   h2, .section-title,
   .list-container > h3,
   .text-container > h3 {
     font-size: 1.5rem;
-    margin: var(--space-lg) 0 var(--space-md);
+    margin: var(--space-xl) 0 var(--space-md);
   }
 
   .layout,
   .row:not(.clearfix) {
     padding: var(--space-md);
     border-radius: 6px;
+    margin-bottom: var(--space-md);
   }
 
   .layout h3 {
@@ -1060,22 +1284,27 @@ footer a:hover {
   }
 
   .card-subtitle {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+  }
+
+  .card-content p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
   }
 }
 
 @media (max-width: 480px) {
   .header-profile img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .header-text {
-    padding-right: 70px;
+    padding-right: 60px;
   }
 
   #header h1 {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   #header h1::after {
@@ -1083,36 +1312,32 @@ footer a:hover {
   }
 
   #header .sub-title {
-    font-size: 0.625rem;
-    letter-spacing: 0.1em;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
   }
 
   #header .icons a {
-    width: 32px;
-    height: 32px;
-    font-size: 0.75rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
   }
 
   .intro-container p,
   #about p {
     font-size: 0.875rem;
     font-style: normal;
-  }
-
-  .about-profile img {
-    width: 80px;
-    height: 80px;
+    line-height: 1.7;
   }
 
   .layout h3,
   .card-title {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
   }
 
   h2, .section-title,
   .list-container > h3,
   .text-container > h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -1285,7 +1510,8 @@ button:focus {
 .llyli-widget {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
+  right: auto;
   z-index: 1000;
   width: 70px;
   height: 70px;
@@ -1319,7 +1545,8 @@ button:focus {
 
 .llyli-tooltip {
   position: absolute;
-  right: calc(100% + 12px);
+  left: calc(100% + 12px);
+  right: auto;
   top: 50%;
   transform: translateY(-50%);
   background: var(--ink);
@@ -1339,39 +1566,17 @@ button:focus {
 .llyli-tooltip::after {
   content: '';
   position: absolute;
-  left: 100%;
+  right: 100%;
+  left: auto;
   top: 50%;
   transform: translateY(-50%);
   border: 6px solid transparent;
-  border-left-color: var(--ink);
+  border-right-color: var(--ink);
 }
 
 .llyli-widget:hover .llyli-tooltip {
   opacity: 1;
   visibility: visible;
-}
-
-/* Dragging state */
-.llyli-widget.is-dragging {
-  cursor: grabbing;
-  transform: scale(1.1);
-  box-shadow:
-    0 12px 40px rgba(0,0,0,0.25),
-    0 20px 70px rgba(39,123,120,0.3);
-  z-index: 1001;
-}
-
-.llyli-widget.is-dragging .llyli-tooltip {
-  display: none;
-}
-
-.llyli-widget.is-dragging::before {
-  animation: none;
-}
-
-/* Grab cursor on hover */
-.llyli-widget {
-  cursor: grab;
 }
 
 /* Pulse animation for attention */
@@ -1402,7 +1607,8 @@ button:focus {
     width: 56px;
     height: 56px;
     bottom: 1.5rem;
-    right: 1.5rem;
+    left: 1.5rem;
+    right: auto;
   }
 
   .llyli-tooltip {
@@ -1489,4 +1695,205 @@ h3#beyond-work::before {
   box-shadow:
     0 4px 30px rgba(107,45,60,0.08),
     inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE — Complete dark theme override
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dark {
+  --ink: #f0f0f0;
+  --ink-soft: #d0d0d0;
+  --ink-muted: #a0a0a0;
+  --paper: #1a1a1a;
+  --paper-warm: #222222;
+  --cream: #333333;
+  --gold: #e6c84a;
+  --gold-light: #f0d86a;
+  --wine: #d4758a;
+  --wine-soft: #c4657a;
+}
+
+.dark body,
+body.dark {
+  background: #1a1a1a;
+  color: #e6e6e6;
+}
+
+/* Dark mode - About section */
+.dark .intro-container,
+.dark #about,
+.dark .about-section {
+  background: #222222;
+  border-bottom-color: #333333;
+}
+
+.dark .intro-container::before {
+  color: var(--gold);
+  opacity: 0.15;
+}
+
+.dark .intro-container h3,
+.dark .about-section h3.section-title {
+  color: #f0f0f0;
+  border-bottom-color: #444444;
+}
+
+.dark .intro-container p,
+.dark #about p,
+.dark .about-section p {
+  color: #c0c0c0;
+}
+
+.dark .intro-container strong,
+.dark #about strong {
+  color: #f0f0f0;
+}
+
+/* Dark mode - Cards */
+.dark .layout,
+.dark .row:not(.clearfix):not(#header .row),
+.dark article {
+  background: #252525;
+  border-color: #333333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.dark .layout::before,
+.dark .row:not(.clearfix):not(#header .row)::before {
+  background: #444444;
+}
+
+.dark .layout:hover::before,
+.dark .row:not(.clearfix):hover::before {
+  background: var(--gold);
+}
+
+.dark .layout:hover,
+.dark .row:not(.clearfix):hover {
+  border-color: #444444;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* Dark mode - Card content */
+.dark .card-title,
+.dark .layout h3,
+.dark .layout h4,
+.dark .row h3,
+.dark .row h4 {
+  color: #f0f0f0;
+}
+
+.dark .layout:hover .card-title,
+.dark .layout:hover h3,
+.dark .layout:hover h4 {
+  color: var(--gold);
+}
+
+.dark .card-subtitle,
+.dark .layout .sub_title {
+  color: #b0b0b0;
+}
+
+.dark .card-caption {
+  background: #333333;
+  color: #a0a0a0;
+}
+
+.dark .card-content p,
+.dark .layout p,
+.dark .row p {
+  color: #b0b0b0;
+}
+
+.dark .card-content strong,
+.dark .layout strong {
+  color: #e0e0e0;
+}
+
+.dark .card-link a {
+  color: var(--gold);
+}
+
+/* Dark mode - Section headers */
+.dark h2,
+.dark .section-title,
+.dark .list-container > h3,
+.dark .text-container > h3 {
+  color: #f0f0f0;
+}
+
+.dark h2::before,
+.dark .section-title::before,
+.dark .list-container > h3::before,
+.dark .text-container > h3::before {
+  background: var(--gold);
+}
+
+/* Dark mode - Text sections */
+.dark .text-container .layout,
+.dark .layout.text {
+  background: linear-gradient(135deg, #252525 0%, #1e1e1e 100%);
+  border-left-color: var(--gold);
+}
+
+.dark .text-container strong,
+.dark .layout.text strong {
+  color: var(--gold);
+}
+
+/* Dark mode - Links */
+.dark a {
+  color: var(--gold);
+}
+
+.dark a:hover {
+  color: #f0d86a;
+}
+
+/* Dark mode - Footer */
+.dark footer,
+.dark #footer {
+  background: #111111;
+}
+
+/* Dark mode - Beyond Work */
+.dark .section-beyond-work .row {
+  background: linear-gradient(145deg, #282828 0%, #222222 50%, #1e1e1e 100%);
+}
+
+.dark .section-beyond-work h3 {
+  color: var(--wine);
+}
+
+.dark .section-beyond-work p {
+  color: #b0b0b0;
+}
+
+.dark .section-beyond-work strong {
+  color: var(--wine);
+}
+
+/* Dark mode - Highlight cards */
+.dark .highlight-cards .highlight-card {
+  background: #252525;
+  border-color: #333333;
+}
+
+.dark .highlight-cards .highlight-card:hover {
+  border-color: var(--gold);
+}
+
+/* Dark mode - Languages */
+.dark .language-item {
+  background: #252525;
+  border-color: #333333;
+}
+
+.dark .language-name {
+  color: #f0f0f0;
+}
+
+.dark .language-level {
+  color: #a0a0a0;
 }

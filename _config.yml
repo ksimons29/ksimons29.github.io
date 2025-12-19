@@ -65,6 +65,11 @@ content:
 
           Part of hands-on upskilling through VibeCoding Lisboa's product community.
 
+  # Consulting Services
+  - title: Available for Consulting & Flex Projects
+    layout: services
+    content: ""
+
   # Selected Outcomes
   - title: Selected Outcomes
     layout: list
@@ -171,22 +176,9 @@ content:
           alignment for citizen-facing platforms.
 
   # Skills
-  - title: Skills
-    layout: text
-    content: |
-      **Product Management**
-      Discovery & Problem Framing • Outcome-Based Roadmapping • Prioritization Frameworks •
-      Experimentation & MVPs • Product Metrics & Analytics • Stakeholder Alignment •
-      Cross-Functional Leadership • Go-to-Market Strategy • Adoption & Change Management
-
-      **Data & AI**
-      Analytics Platforms • Metrics Design • Data Quality & Lineage •
-      GenAI & RAG Systems • Prompt Engineering • Azure OpenAI • LLM Evaluation •
-      Data Governance (Regulated Environments)
-
-      **Tools & Technical**
-      SQL • Python (basics) • Power BI • Tableau • Jira • Azure DevOps • Confluence •
-      Miro • Figma (wireframes) • Collibra • Snowflake • Databricks • VS Code
+  - title: Core Skills
+    layout: skills
+    content: ""
 
   # Education & Learning
   - title: Education & Upskilling

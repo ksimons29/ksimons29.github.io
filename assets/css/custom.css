@@ -454,116 +454,71 @@ main,
 }
 
 /* ── Highlight Cards ──────────────────────────────────────────────────────── */
-.highlight-cards {
+.highlight-blocks {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: var(--space-lg) 0 0;
   padding-top: var(--space-md);
   border-top: 1px dashed var(--cream);
 }
 
 .highlight-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: var(--space-md);
-  text-align: center;
-  border: 1px solid var(--cream);
-  transition: all 0.4s var(--ease-out);
-  position: relative;
-  overflow: hidden;
-}
-
-.highlight-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--wine));
-  transform: scaleX(0);
-  transition: transform 0.4s var(--ease-out);
-}
-
-.highlight-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-  border-color: transparent;
-}
-
-.highlight-card:hover::before {
-  transform: scaleX(1);
-}
-
-.highlight-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto var(--space-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gold-glow);
-  border-radius: 12px;
-  color: var(--gold);
-  font-size: 1.25rem;
+  background: var(--paper-warm);
+  border-left: 4px solid #2d6a6a;
+  padding: 1.5rem;
+  border-radius: 8px;
   transition: all 0.3s var(--ease-out);
 }
 
-.highlight-card:hover .highlight-icon {
-  background: var(--gold);
-  color: #fff;
-  transform: scale(1.1);
+.highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
 }
 
-.highlight-title {
+.highlight-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card h4 {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--ink);
-  margin-bottom: var(--space-xs);
+  margin: 0 0 0.5rem 0;
+  color: #2d6a6a;
 }
 
-.highlight-text {
+.highlight-card p {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
   margin: 0;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
 }
 
-/* Mobile: stack cards */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .highlight-cards {
+  .highlight-blocks {
     grid-template-columns: 1fr;
-    gap: var(--space-sm);
+    gap: 1rem;
   }
 
   .highlight-card {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: var(--space-sm) var(--space-md);
+    padding: 1.25rem;
   }
 
   .highlight-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 var(--space-sm) 0 0;
-    flex-shrink: 0;
+    font-size: 1.75rem;
   }
 
-  .highlight-card > div:last-child {
-    flex: 1;
-  }
-
-  .highlight-title {
+  .highlight-card h4 {
     font-size: 0.9375rem;
-    margin-bottom: 2px;
   }
 
-  .highlight-text {
-    font-size: 0.75rem;
+  .highlight-card p {
+    font-size: 0.875rem;
   }
 }
 
@@ -1875,13 +1830,17 @@ body.dark {
 }
 
 /* Dark mode - Highlight cards */
-.dark .highlight-cards .highlight-card {
+.dark .highlight-blocks .highlight-card {
   background: #252525;
-  border-color: #333333;
+  border-left-color: #4a9a9a;
 }
 
-.dark .highlight-cards .highlight-card:hover {
-  border-color: var(--gold);
+.dark .highlight-card h4 {
+  color: #5ab5b5;
+}
+
+.dark .highlight-card p {
+  color: #b0b0b0;
 }
 
 /* Dark mode - Languages */

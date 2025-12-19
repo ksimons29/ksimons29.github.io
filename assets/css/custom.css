@@ -277,19 +277,25 @@ h1.name {
   }
 }
 
-/* Title/Role - refined uppercase */
+/* Title/Role - refined badge style */
 #header .sub-title,
 .header-container .sub-title,
 h2.sub-title,
 #header h2 {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #d4a373;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   margin-bottom: var(--space-md);
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(212, 163, 115, 0.4);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
   animation: slideUp 0.8s var(--ease-out) 0.6s both;
 }
 
@@ -1180,6 +1186,41 @@ footer a {
 footer a:hover {
   color: #fff;
   border-bottom-color: var(--gold);
+}
+
+/* Language badges in footer */
+.language-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: var(--space-md) 0;
+}
+
+.language-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s var(--ease-out);
+}
+
+.language-badge:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(212,163,115,0.4);
+  color: #d4a373;
+}
+
+.language-badge .flag {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

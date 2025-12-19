@@ -4,6 +4,12 @@
     <p class="footer-contact">
       <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
     </p>
+    <div class="language-badges">
+      <span class="language-badge"><span class="flag">🇳🇱</span> Native</span>
+      <span class="language-badge"><span class="flag">🇬🇧</span> Fluent</span>
+      <span class="language-badge"><span class="flag">🇵🇹</span> Working</span>
+      <span class="language-badge"><span class="flag">🇩🇪</span> Working</span>
+    </div>
     {%- if site.footer_show_references -%}
       <p class="footer-note">{{ site.references_title | default: "References available on request" }}</p>
     {%- endif -%}

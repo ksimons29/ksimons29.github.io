@@ -1,5 +1,5 @@
 # Site Settings
-title: Koos Simons - Product Manager | Lisbon
+title: Koos Simons — Product Manager • Lisbon
 email: koossimons91@gmail.com
 description: >-
   Product Manager based in Lisbon with 6 years PM experience building products
@@ -12,7 +12,7 @@ version: 2
 
 # Personal Info
 name: Koos Simons
-title: Product Manager | Lisbon
+title: Product Manager — Lisbon
 email: koossimons91@gmail.com
 website: ksimons29.github.io
 
@@ -129,44 +129,32 @@ content:
     layout: list
     content:
       - layout: left
-        title: Rabobank
-        sub_title: Product Manager - Data & AI
-        caption: 2022 - 2024
-        link: rabobank.nl
+        title: Cognizant
+        sub_title: Product Manager & Consulting Manager
+        caption: 2016 - Oct 2025
+        link: cognizant.com
         description: |
-          Led product development for GenAI assistant and data platform capabilities.
-          Shipped RAG-based knowledge tools, designed governance operating models,
-          and coordinated cross-functional delivery across business and engineering teams.
+          Partnered with clients across banking, retail, telecom, and public sector to ship
+          data products, analytics platforms, and AI tools. Grew from BI consultant to
+          consulting manager, leading cross-functional teams from discovery to rollout.
 
-      - layout: left
-        title: Nike
-        sub_title: Product Manager - Analytics
-        caption: 2021 - 2022
-        link: nike.com
-        description: |
-          Drove self-service analytics adoption and predictive modeling for European
-          store operations. Evaluated platforms, built business cases, and led rollout
-          across retail teams—balancing speed of insight with data quality.
+          **Key Client Projects:**
 
-      - layout: left
-        title: KPN
-        sub_title: Business Analyst / Product Owner
-        caption: 2019 - 2021
-        link: kpn.com
-        description: |
+          **Rabobank** (2022-2024) — Product Manager
+          Led GenAI assistant for policy/compliance search. 40+ user interviews, RAG pipeline
+          design, ~95% answer accuracy. Also designed data governance operating model.
+
+          **Nike EMEA** (2021-2022) — Product Manager
+          Scaled self-service analytics platform to 2,000+ users. Decision speed +25%,
+          data inconsistencies -40%. Built business cases and led cross-functional rollout.
+
+          **KPN** (2019-2021) — Product Owner
           Managed customer data platforms and analytics tools for telecom operations.
-          Prioritized backlogs, ran discovery, and coordinated delivery across
-          business, data, and engineering teams.
+          Prioritized backlogs, ran discovery, coordinated business and engineering teams.
 
-      - layout: left
-        title: Gemeente Amsterdam
-        sub_title: Business Analyst
-        caption: 2017 - 2019
-        link: amsterdam.nl
-        description: |
-          Supported digital transformation projects for municipal services.
-          Gathered requirements, mapped processes, and facilitated stakeholder
-          alignment for citizen-facing platforms.
+          **Gemeente Amsterdam** (2017-2019) — Business Analyst
+          Supported digital transformation for municipal services. Requirements gathering,
+          process mapping, stakeholder alignment for citizen-facing platforms.
 
   # Skills
   - title: Core Skills

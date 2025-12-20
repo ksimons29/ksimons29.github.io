@@ -163,9 +163,12 @@ body {
   z-index: 10;
 }
 
+/* Use high specificity to override generic #header img styles */
+#header .header-profile img,
+.header-container .header-profile img,
 .header-profile img {
-  width: 100px;
-  height: 100px;
+  width: 100px !important;
+  height: 100px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--gold);
@@ -174,6 +177,9 @@ body {
     0 10px 30px rgba(0,0,0,0.4);
   transition: all 0.5s var(--ease-out);
   animation: fadeInScale 1s var(--ease-out) 0.2s both;
+  margin: 0 !important;
+  float: none !important;
+  display: block;
 }
 
 .header-profile img:hover {
@@ -1247,17 +1253,19 @@ footer a:hover {
 
   /* Profile stays top-right on mobile - smaller and positioned better */
   .header-profile {
-    position: absolute;
+    position: absolute !important;
     top: var(--space-sm);
     right: var(--space-sm);
     z-index: 10;
   }
 
+  #header .header-profile img,
+  .header-container .header-profile img,
   .header-profile img {
-    width: 55px;
-    height: 55px;
-    border-width: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 55px !important;
+    height: 55px !important;
+    border-width: 2px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
   }
 
   .header-text {
@@ -1376,9 +1384,11 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+  #header .header-profile img,
+  .header-container .header-profile img,
   .header-profile img {
-    width: 45px;
-    height: 45px;
+    width: 45px !important;
+    height: 45px !important;
   }
 
   .header-text {
@@ -1431,10 +1441,12 @@ footer a:hover {
     right: var(--space-xs);
   }
 
+  #header .header-profile img,
+  .header-container .header-profile img,
   .header-profile img {
-    width: 40px;
-    height: 40px;
-    border-width: 1.5px;
+    width: 40px !important;
+    height: 40px !important;
+    border-width: 1.5px !important;
   }
 
   .header-text {

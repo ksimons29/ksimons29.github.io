@@ -1250,23 +1250,28 @@ footer a:hover {
     position: absolute;
     top: var(--space-sm);
     right: var(--space-sm);
+    z-index: 10;
   }
 
   .header-profile img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-width: 2px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   .header-text {
     min-width: auto;
-    padding-right: 70px; /* Make room for profile */
+    padding-right: 65px; /* Make room for profile */
     padding-top: var(--space-xs);
+    max-width: calc(100% - 70px); /* Prevent overflow into image area */
   }
 
   #header h1 {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
     line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   #header h1::after {
@@ -1372,16 +1377,17 @@ footer a:hover {
 
 @media (max-width: 480px) {
   .header-profile img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
 
   .header-text {
-    padding-right: 60px;
+    padding-right: 55px;
+    max-width: calc(100% - 55px);
   }
 
   #header h1 {
-    font-size: 1.375rem;
+    font-size: clamp(1.1rem, 4.5vw, 1.375rem);
   }
 
   #header h1::after {
@@ -1389,8 +1395,8 @@ footer a:hover {
   }
 
   #header .sub-title {
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
   }
 
   #header .icons a {
@@ -1415,6 +1421,38 @@ footer a:hover {
   .list-container > h3,
   .text-container > h3 {
     font-size: 1.25rem;
+  }
+}
+
+/* Extra small screens (iPhone SE, older devices) */
+@media (max-width: 360px) {
+  .header-profile {
+    top: var(--space-xs);
+    right: var(--space-xs);
+  }
+
+  .header-profile img {
+    width: 40px;
+    height: 40px;
+    border-width: 1.5px;
+  }
+
+  .header-text {
+    padding-right: 50px;
+    max-width: calc(100% - 50px);
+  }
+
+  #header h1 {
+    font-size: 1rem;
+  }
+
+  #header .sub-title {
+    font-size: 0.5rem;
+  }
+
+  .languages-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
   }
 }
 

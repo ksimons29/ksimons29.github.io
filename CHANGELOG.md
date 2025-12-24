@@ -11,6 +11,7 @@ All notable changes to the Koos Simons portfolio site.
 - Aligned CI to Ruby 3.2.2 and pinned Bundler 2.4.22 for consistent installs
 - Updated dependencies to github-pages ~> 232 and html-proofer ~> 5.0
 - Replaced the ci-skip action with an inline check that writes to GITHUB_OUTPUT to avoid set-output deprecation warnings
+- Updated test config sample links to use https for html-proofer compliance
 
 ---
 

@@ -1,0 +1,20 @@
+<div class="languages-section">
+  <div class="languages-grid">
+    {% for language in include.content %}
+      <div class="language-item">
+        {%- if language.flag -%}
+          <span class="language-flag">{{ language.flag }}</span>
+        {%- endif -%}
+        <div class="language-info">
+          <span class="language-name">{{ language.name }}</span>
+          <span class="language-level">{{ language.level }}</span>
+        </div>
+        {%- if language.progress -%}
+          <div class="language-bar">
+            <div class="language-progress" style="width: {{ language.progress }}%"></div>
+          </div>
+        {%- endif -%}
+      </div>
+    {% endfor %}
+  </div>
+</div>

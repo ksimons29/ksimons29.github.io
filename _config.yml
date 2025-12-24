@@ -1,0 +1,109 @@
+title: Koos Simons
+email: koossimons91@gmail.com
+description: >-
+  Product Manager with 6 years in product roles. Based in Lisbon, 
+  open to roles across Portugal and remote opportunities in Europe.
+
+remote_theme: sproogen/modern-resume-theme
+
+name: Koos Simons
+title: Product Manager | Lisbon
+email: koossimons91@gmail.com
+website: ksimons29.github.io
+
+linkedin_username: koossimons
+
+darkmode: false
+
+about_content: |
+  Product Manager with ~6 years in product roles and 10 years total experience 
+  who turns complex problems into products people actually use.
+  
+  I lead discovery, align stakeholders, and ship outcomes that matter. 
+  Currently based in **Lisbon**, open to product roles across Portugal and 
+  remote opportunities in Europe.
+
+content:
+  - title: Selected Work
+    layout: list
+    content:
+      - layout: top-middle
+        title: AI-Powered Knowledge Assistant
+        sub_title: Product Manager | Financial Services
+        caption: 2024 | 6 months
+        description: |
+          **Challenge:** Teams spending 15-20 minutes per query searching disconnected systems.
+          
+          **Approach:**
+          - Led discovery with 40+ user interviews
+          - Designed RAG-based solution
+          - Created evaluation framework for quality
+          - Ran phased rollout with tracking
+          
+          **Outcome:**
+          - Reduced search time by ~30%
+          - 65% adoption in 3 months
+          - 4.2/5 satisfaction score
+
+      - layout: top-middle
+        title: Self-Service Analytics Platform
+        sub_title: Product Manager | Retail
+        caption: 2023 | 8 months
+        description: |
+          **Challenge:** 200+ custom reports per quarter overwhelming BI team.
+          
+          **Approach:**
+          - Evaluated 5 tools against criteria
+          - Built TCO business case
+          - Led cross-functional selection
+          - Designed training strategy
+          
+          **Outcome:**
+          - 40% reduction in report time
+          - 120+ self-service users
+          - Backlog cleared in 90 days
+
+      - layout: top-middle
+        title: Data Governance Operating Model
+        sub_title: Product Lead | Banking
+        caption: 2022-2023 | 12 months
+        description: |
+          **Challenge:** Fragmented governance causing compliance gaps.
+          
+          **Approach:**
+          - Designed federated model
+          - Built visible quality scorecard
+          - Created lightweight process
+          - Launched stewardship community
+          
+          **Outcome:**
+          - 85% policy adoption in 6 months
+          - Quality scores 60% → 85%
+          - Process time 4 weeks → 1 week
+
+  - title: Current Learning
+    layout: text
+    content: |
+      **Carnegie Mellon Advanced Product Management Program** (2025)  
+      Structured PM curriculum covering discovery, roadmapping, and metrics.
+      
+      **Vibe Code Lisbon**  
+      Active in Lisbon's product and tech community.
+
+  - title: Skills
+    layout: text
+    content: |
+      **Product Management:** Discovery • Roadmapping • Prioritization • Metrics • 
+      Stakeholder Alignment • Cross-functional Leadership • User Research
+      
+      **Technical:** SQL • Power BI • Tableau • Jira • Azure DevOps • Confluence
+      
+      **Domains:** Data Products • AI Products • B2B SaaS
+
+  - title: Interests
+    layout: text
+    content: |
+      Board member and saxophonist in a big band • Family toy shop digital marketing • 
+      Camino de Santiago • Music and conversations
+
+footer_show_references: false

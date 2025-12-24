@@ -4,6 +4,13 @@ All notable changes to the Koos Simons portfolio site.
 
 ---
 
+## [December 2025] - CI Maintenance
+
+### Actions Workflow
+- Restored CI workflow using actions/checkout@v4 and ruby/setup-ruby bundler-cache to avoid deprecated actions/cache@v2 failures
+
+---
+
 ## [December 2024] - Design Refinement
 
 ### Issue #9: Warm Palette & Focused Spacing

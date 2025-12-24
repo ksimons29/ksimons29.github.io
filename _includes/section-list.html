@@ -1,8 +1,8 @@
 {% for item in include.content %}
-  <div class="row clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
+  <article class="row clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
     <div class="card-header">
       <div class="card-meta">
-        <h4 id="{{ item.title | slugify }}" class="card-title">{{ item.title }}</h4>
+        <h3 id="{{ item.title | slugify }}" class="card-title">{{ item.title }}</h3>
         {%- if item.sub_title -%}<p class="card-subtitle">{{ item.sub_title }}</p>{%- endif -%}
         {%- if item.link -%}
           <p class="card-link">
@@ -27,5 +27,5 @@
         </a>
       {% endfor %}
     </p>
-  </div>
+  </article>
 {% endfor %}

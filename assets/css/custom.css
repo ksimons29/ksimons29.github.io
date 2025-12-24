@@ -673,11 +673,10 @@ main,
    SECTION HEADERS — Magazine style
    ═══════════════════════════════════════════════════════════════════════════ */
 
-h2,
-.section-title,
-.container h3:first-child,
-.list-container > h3,
-.text-container > h3 {
+/* Section headings - H2 for main sections */
+h2.section-title,
+section > h2,
+.container > h2 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 500;
@@ -689,10 +688,9 @@ h2,
   display: block;
 }
 
-h2::before,
-.section-title::before,
-.list-container > h3::before,
-.text-container > h3::before {
+h2.section-title::before,
+section > h2::before,
+.container > h2::before {
   content: '';
   display: block;
   width: 32px;
@@ -701,12 +699,21 @@ h2::before,
   margin-bottom: var(--space-xs);
 }
 
-h3 {
+/* Card/item headings - H3 for items within sections */
+h3,
+h3.card-title {
   font-family: var(--font-body);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: var(--space-xs);
+}
+
+/* Ensure card titles don't get section decorations */
+h3.card-title::before,
+article h3::before,
+.layout h3::before {
+  display: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1214,9 +1221,9 @@ footer a:hover {
     padding: 0 var(--space-md) var(--space-xl);
   }
 
-  h2, .section-title,
-  .list-container > h3,
-  .text-container > h3 {
+  h2.section-title,
+  section > h2,
+  .container > h2 {
     font-size: 1.25rem;
     margin: var(--space-lg) 0 var(--space-sm);
   }
@@ -1300,9 +1307,9 @@ footer a:hover {
     font-size: 1.0625rem;
   }
 
-  h2, .section-title,
-  .list-container > h3,
-  .text-container > h3 {
+  h2.section-title,
+  section > h2,
+  .container > h2 {
     font-size: 1.25rem;
   }
 }
@@ -1816,17 +1823,15 @@ body.dark {
 }
 
 /* Dark mode - Section headers */
-.dark h2,
-.dark .section-title,
-.dark .list-container > h3,
-.dark .text-container > h3 {
+.dark h2.section-title,
+.dark section > h2,
+.dark .container > h2 {
   color: #f0f0f0;
 }
 
-.dark h2::before,
-.dark .section-title::before,
-.dark .list-container > h3::before,
-.dark .text-container > h3::before {
+.dark h2.section-title::before,
+.dark section > h2::before,
+.dark .container > h2::before {
   background: var(--gold);
 }
 

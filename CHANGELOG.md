@@ -4,7 +4,19 @@ All notable changes to the Koos Simons portfolio site.
 
 ---
 
-## [December 2024] - Major Redesign & Polish
+## [December 2024] - Semantic Structure & Polish
+
+### Issue #1: Semantic Page Structure
+- Changed header subtitle from `<h2>` to `<p>` to reserve H2 for sections
+- Updated About section heading from H3 to H2
+- Changed content sections from `<div>` to `<section>` elements
+- Updated section headings from H3 to H2 for proper hierarchy
+- Changed list item cards from `<div>` to `<article>` elements
+- Updated card titles from H4 to H3 for correct heading order
+- Added `aria-label` attributes to sections for accessibility
+- Section IDs now generated from titles for anchor navigation
+- Updated CSS selectors to target new semantic structure
+- Heading hierarchy now correct: H1 (name) → H2 (sections) → H3 (items) → H4 (sub-items)
 
 ### Branch Alignment
 - Merged `master` into `main` to sync all latest changes
@@ -91,4 +103,5 @@ All notable changes to the Koos Simons portfolio site.
 
 ## Issues Resolved
 
+- [x] #1 - Rebuild page structure with semantic sections and consistent layout
 - [x] #8 - Ensure same basepoint with the pagesetup is done (merged main ← master)

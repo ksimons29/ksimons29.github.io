@@ -13,6 +13,7 @@ All notable changes to the Koos Simons portfolio site.
 - Replaced the ci-skip action with an inline check that writes to GITHUB_OUTPUT to avoid set-output deprecation warnings
 - Updated test config sample links to use https for html-proofer compliance
 - Simplified CI to a single Jekyll build step to keep portfolio changes unblocked
+- Moved languages into a dedicated bottom-of-page section driven by config
 
 ---
 

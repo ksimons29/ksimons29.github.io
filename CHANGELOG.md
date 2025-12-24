@@ -7,7 +7,9 @@ All notable changes to the Koos Simons portfolio site.
 ## [December 2025] - CI Maintenance
 
 ### Actions Workflow
-- Restored CI workflow using actions/checkout@v4 and ruby/setup-ruby bundler-cache to avoid deprecated actions/cache@v2 failures
+- Restored CI workflow with actions/checkout@v4 and ruby/setup-ruby bundler-cache to avoid deprecated actions/cache@v2 failures
+- Aligned CI to Ruby 3.2.2 and pinned Bundler 2.4.22 for consistent installs
+- Updated dependencies to github-pages ~> 232 and html-proofer ~> 5.0
 
 ---
 

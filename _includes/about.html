@@ -1,13 +1,79 @@
-<div class="container intro-container">
-  <h3>{{ site.about_title | default: "About Me" }}</h3>
-  <div class="row clearfix">
+<section class="about-section" id="about" aria-label="About">
+  <h3 class="section-title">About Me</h3>
+  <div class="about-wrapper">
     {%- if site.about_profile_image -%}
-      <div class="col-xs-12 col-sm-4 col-md-3 no-print">
-        <span class="profile-img" style="background-image: url({{ site.about_profile_image | relative_url }})"></span>
-      </div>
+    <div class="about-profile">
+      <img src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name }}" />
+    </div>
     {%- endif -%}
-    <div class="{{ 'col-xs-12 ' }}{%- if site.about_profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
+    <div class="about-content">
       {{ site.about_content | strip | markdownify }}
     </div>
   </div>
-</div>
+
+  <!-- Key Highlights -->
+  <div class="highlight-blocks">
+    <div class="highlight-card">
+      <span class="highlight-icon">🎯</span>
+      <h4>Product Discovery & Delivery</h4>
+      <p>Led 40+ user interviews, shipped GenAI assistant with 200+ users in 3 months. I turn fuzzy problems into shipped products.</p>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">🤖</span>
+      <h4>Data & AI Systems</h4>
+      <p>Built RAG-based tools, analytics platforms, and governance models at Nike, Rabobank, KPN. I make data useful.</p>
+    </div>
+    <div class="highlight-card">
+      <span class="highlight-icon">🤝</span>
+      <h4>Cross-Functional Leadership</h4>
+      <p>Coordinated business, engineering, and design across 4 industries. I get alignment without the meetings.</p>
+    </div>
+  </div>
+
+  <!-- Languages -->
+  <div class="languages-section">
+    <h4 class="languages-title">Languages</h4>
+    <div class="languages-grid">
+      <div class="language-item">
+        <span class="language-flag">🇳🇱</span>
+        <div class="language-info">
+          <span class="language-name">Dutch</span>
+          <span class="language-level">Native</span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 100%"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <span class="language-flag">🇬🇧</span>
+        <div class="language-info">
+          <span class="language-name">English</span>
+          <span class="language-level">Full Professional</span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 95%"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <span class="language-flag">🇵🇹</span>
+        <div class="language-info">
+          <span class="language-name">Portuguese</span>
+          <span class="language-level">Limited Working</span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 45%"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <span class="language-flag">🇩🇪</span>
+        <div class="language-info">
+          <span class="language-name">German</span>
+          <span class="language-level">Limited Working</span>
+        </div>
+        <div class="language-bar">
+          <div class="language-progress" style="width: 40%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

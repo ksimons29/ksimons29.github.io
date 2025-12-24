@@ -4,6 +4,22 @@ All notable changes to the Koos Simons portfolio site.
 
 ---
 
+## [December 2024] - Design Refinement
+
+### Issue #9: Warm Palette & Focused Spacing
+- Extended hero colors (navy, terracotta) throughout the page for visual harmony
+- Replaced disconnected teal accent (`#2d6a6a`) with navy (`var(--navy)`)
+- Updated background from cold off-white (`#faf9f7`) to warm cream (`#f8f6f3`)
+- Added terracotta accent family from hero subtitle
+- Reduced spacing scale by ~30% for tighter, more intentional composition
+- Added section-specific tokens: `--section-gap`, `--card-padding`, `--grid-gap`
+- Updated section title accent bar from gold to terracotta
+- Updated card borders to use new `--border-default` token
+- Added dark mode equivalents for all new color tokens
+- See `DESIGN_UPDATE_REPORT.md` for full details
+
+---
+
 ## [December 2024] - Semantic Structure & Polish
 
 ### Issue #1: Semantic Page Structure

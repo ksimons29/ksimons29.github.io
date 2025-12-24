@@ -204,6 +204,27 @@ content:
       in Lisbon. Always up for live music, trail hiking, and conversations about how
       products actually get built (and adopted).
 
+  # Languages
+  - title: Languages
+    layout: languages
+    content:
+      - name: Dutch
+        level: Native
+        flag: "🇳🇱"
+        progress: 100
+      - name: English
+        level: Full Professional
+        flag: "🇬🇧"
+        progress: 95
+      - name: Portuguese
+        level: Limited Working
+        flag: "🇵🇹"
+        progress: 45
+      - name: German
+        level: Limited Working
+        flag: "🇩🇪"
+        progress: 40
+
 # Footer
 footer_show_references: false
 

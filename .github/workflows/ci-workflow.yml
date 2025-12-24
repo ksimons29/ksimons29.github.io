@@ -36,9 +36,26 @@ jobs:
         with:
           fetch-depth: 0
       - id: ci-skip-step
-        uses: mstachniuk/ci-skip@v1
-        with:
-          commit-filter: '[skip ci]'
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          message=""
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            message="${PR_TITLE} ${PR_BODY}"
+          else
+            message="${COMMIT_MESSAGE}"
+          fi
+
+          if echo "$message" | grep -qiE '\\[skip ci\\]'; then
+            echo "ci-skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ci-skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
   bump-version-deploy:
     name: Bump Version and Deploy

@@ -18,10 +18,10 @@
 
       {%- if site.version == 2 -%}
         {% for section in site.content %}
-          <div class="container {{ section.layout }}-container section-{{ section.title | slugify }}">
-            <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
+          <section class="container {{ section.layout }}-container" id="{{ section.title | slugify }}" aria-label="{{ section.title }}">
+            <h2 class="section-title">{{ section.title }}</h2>
             {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
-          </div>
+          </section>
         {% endfor %}
       {% else %}
         {%- include v1/default.html -%}
